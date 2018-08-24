@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --mode development",
+    "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/patiwet/reactredux-sharing-12082018.git"
+  },
+  "babel": {
+    "presets": ["env", "react"]
   },
   "keywords": [],
   "author": "",
