@@ -3,7 +3,7 @@ import {
     TODO_REMOVE
 } from 'constants/actionTypes'
 
-const initialState = [createTodo({text: 'ทดสอบ'})]
+const initialState = addTodo([], {text: 'ทดสอบ'})
 
 export default (state = initialState, action) => {
 
@@ -11,7 +11,7 @@ export default (state = initialState, action) => {
 
     switch (type) {
         case TODO_ADD:
-            return createTodo(state, payload)
+            return addTodo(state, payload)
         case TODO_REMOVE:
             return removeTodo(state, payload)
         default:
@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
 }
 
 let runningId = 0
-const createTodo = (oldState, data) => {
+function addTodo (oldState, data) {
 
     runningId++
     data.id = runningId
@@ -28,6 +28,6 @@ const createTodo = (oldState, data) => {
     return [...oldState, data]
 }
 
-const removeTodo = (oldState, id) => {
+function removeTodo (oldState, id) {
     state.filter(todo => id !== todo.id)
 }

@@ -14,7 +14,7 @@ class AddForm extends React.Component {
     }
 
     render () {
-        return <AddForm text={this.text} onSubmit={tihs.onSubmit} />
+        return <AddForm text={this.text} onSubmit={this.onSubmit} />
     }
 }
 

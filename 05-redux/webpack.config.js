@@ -7,6 +7,7 @@ const htmlWebpackPlugin = new HtmlWebPackPlugin({
 });
 
 module.exports = {
+  devtool: 'source-map',
   entry: './src/app.js',
   module: {
     rules: [
