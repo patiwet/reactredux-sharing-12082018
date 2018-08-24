@@ -11,4 +11,3 @@ Redux
 -Data flow problem
 -What and why redux
 -Actions/Reducer/Store/Connect
--Workshop
