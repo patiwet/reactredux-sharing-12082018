@@ -3,18 +3,18 @@ import {
     TODO_REMOVE
 } from 'constants/actionTypes'
 
-export const addTodo = (form) => {
+export const addTodo = (data) => {
 
     return {
-        action: TODO_ADD,
-        payload: form
+        type: TODO_ADD,
+        payload: data
     }
 }
 
 export const removeTodo = (id) => {
 
     return {
-        action: TODO_ADD,
+        type: TODO_ADD,
         payload: id
     }
 }

@@ -6,7 +6,7 @@ import TodoList from 'containers/TodoList'
 class Main extends React.Component {
 
     render () {    
-        return <div>
+        return <div className='container'>
             <AddForm />
             <TodoList />
         </div>

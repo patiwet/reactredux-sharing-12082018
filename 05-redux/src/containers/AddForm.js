@@ -2,26 +2,34 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from 'actions/todos'
 
-class AddForm extends React.Component {
+import AddForm from 'components/AddForm'
+
+class AddFormContainer extends React.Component {
 
     state = {
         text: ''
     }
 
+    onChangeText = (e) => {
+        const {value} = e.target
+        const newState = {text: value}
+        this.setState(newState)
+    }
+
     onSubmit = (e) => {
         e.preventDefault()
         this.props.addTodo(this.state)
+        this.setState({text: ''})
     }
 
     render () {
-        return <AddForm text={this.text} onSubmit={this.onSubmit} />
+        return <AddForm
+            text={this.state.text}
+            onChangeText={this.onChangeText}
+            onSubmit={this.onSubmit} />
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        todos: state.todos
-    }
-}
+const mapStateToProps = (state) => ({})
 
-export default connect(mapStateToProps, { addTodo })(AddForm)
+export default connect(mapStateToProps, { addTodo })(AddFormContainer)

@@ -3,6 +3,7 @@ import {
     TODO_REMOVE
 } from 'constants/actionTypes'
 
+let runningId = 0
 const initialState = addTodo([], {text: 'ทดสอบ'})
 
 export default (state = initialState, action) => {
@@ -19,7 +20,6 @@ export default (state = initialState, action) => {
     }
 }
 
-let runningId = 0
 function addTodo (oldState, data) {
 
     runningId++
