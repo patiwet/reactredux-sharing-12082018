@@ -21,6 +21,10 @@ export default (state = initialState, action) => {
 }
 
 function addTodo (oldState, data) {
+    
+    if (!data.text) {
+        return oldState
+    }
 
     runningId++
     data.id = runningId
@@ -29,5 +33,5 @@ function addTodo (oldState, data) {
 }
 
 function removeTodo (oldState, id) {
-    state.filter(todo => id !== todo.id)
+    return oldState.filter(todo => id !== todo.id)
 }
